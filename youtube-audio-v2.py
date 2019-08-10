@@ -1,5 +1,6 @@
 import youtube_dl
 import requests
+import time
 import os
 import getpass
 import colorama
@@ -42,12 +43,14 @@ def get_name ():
 
 colorama.init()
 mk_dir()
+print(Fore.YELLOW+"Welcome "+get_name()+" to Pear Audio Downloader"+ Style.RESET_ALL)
 if not check_conn():
 	print(Fore.RED+"No internet connection found. "+ Style.RESET_ALL)
+	time.sleep(5)
 else:
-	print(Fore.YELLOW+"Welcome "+get_name()+" to Pear Audio Downloader"+ Style.RESET_ALL)
-	link=input("Enter the video URL: ")
-	print(Fore.CYAN+"Title: "+get_title(link)+Style.RESET_ALL)
-	get_audio(link) #test url: https://youtu.be/AOeY-nDp7hI
-	print ("File(s) stored at:",os.getcwd()+"/"+"Downloads")
-	print (Fore.GREEN+"Complete."+Style.RESET_ALL)
+	while(True):
+		link=input("Enter the video URL: ")
+		print(Fore.CYAN+"Title: "+get_title(link)+Style.RESET_ALL)
+		get_audio(link) #test url: https://youtu.be/AOeY-nDp7hI
+		print ("File(s) stored at:",os.getcwd()+"/"+"Downloads")
+		print (Fore.GREEN+"Complete."+Style.RESET_ALL)
