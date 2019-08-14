@@ -56,10 +56,10 @@ if not check_conn():
 	print(Fore.RED+"No internet connection found. "+ Style.RESET_ALL)
 	time.sleep(5)
 else:
-	if (check_url()==True):
+	if (check_url()):
 		link=sys.argv[1]
 	else:
-		link=input("Enter the video URL: ")
+		link=input("Enter video URL: ")
 
 	print(Fore.CYAN+"Title: "+get_title(link)+Style.RESET_ALL)
 	get_audio(link) #test url: https://youtu.be/AOeY-nDp7hI
