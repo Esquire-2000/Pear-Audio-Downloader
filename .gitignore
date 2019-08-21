@@ -109,3 +109,7 @@ etc/
 share/
 desktop.ini
 icon.ico
+output/LICENSE
+output/README.md
+output/pear-audio
+output/setup.py
